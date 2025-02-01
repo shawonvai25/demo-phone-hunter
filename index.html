@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trial</title>
+    <title>demo phone hunter</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <!-- navbar start -->
-
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -29,10 +28,10 @@
               <span class="absolute -inset-0.5"></span>
               <span class="sr-only">Open main menu</span>
               <!--
-              Icon when menu is closed.
-  
-              Menu open: "hidden", Menu closed: "block"
-            -->
+                Icon when menu is closed.
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
               <svg
                 class="block size-6"
                 fill="none"
@@ -49,10 +48,10 @@
                 />
               </svg>
               <!--
-              Icon when menu is open.
-  
-              Menu open: "block", Menu closed: "hidden"
-            -->
+                Icon when menu is open.
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
               <svg
                 class="hidden size-6"
                 fill="none"
@@ -154,15 +153,16 @@
               </div>
 
               <!--
-              Dropdown menu, show/hide based on menu state.
-  
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            --></div>
+                Dropdown menu, show/hide based on menu state.
+    
+                Entering: "transition ease-out duration-100"
+                  From: "transform opacity-0 scale-95"
+                  To: "transform opacity-100 scale-100"
+                Leaving: "transition ease-in duration-75"
+                  From: "transform opacity-100 scale-100"
+                  To: "transform opacity-0 scale-95"
+              -->
+            </div>
           </div>
         </div>
       </div>
@@ -196,49 +196,68 @@
       </div>
     </nav>
 
-    <!-- navbar  end -->
+    <!-- navbar end -->
 
-    <div class="w-full max-w-sm mx-auto mt-5">
-      <div class="flex items-center">
-        <input
-          id="search-box"
-          type="text"
-          placeholder="Search...."
-          class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <button
-          onclick="handleSearch()"
-          type="submit"
-          class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          Search
+    <!-- main start -->
+    <main>
+      <!-- searchbar start -->
+      <div class="w-1/3 mx-w-sm mx-auto mt-5">
+        <div class="flex items-center">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onclick="handleSearch()"
+            type="submit"
+            class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            search
+          </button>
+        </div>
+      </div>
+      <!-- searchbar end -->
+
+      <div
+        id="phones-container"
+        class="phones-container flex justify-around items-center flex-wrap"
+      >
+        <div id="spinner"></div>
+      </div>
+
+      <div class="w-full text-center">
+        <button onclick="handleShowAll()" class="btn bg-red-500 mt-5 mx-auto">
+          Show All
         </button>
       </div>
-    </div>
+    </main>
+    <!-- main end -->
 
-    <!-- all phone show in this container -->
-    <div
-      id="phones-container"
-      class="phones-container flex justify-around items-center flex-wrap"
-    >
-      <!-- here we show our spinner -->
-      <div id="spinner"></div>
-      <!-- here we make our phone card -->
-    </div>
-
-    <div class="text-center">
-      <button onclick="handleShowAll()" class="btn bg-red-500 mt-5">
-        Show All
-      </button>
-    </div>
-
-    <!-- show modal here -->
-
-    <!-- Open the modal using ID.showModal() method -->
-
-    <div id="modal-container"></div>
-
-    <!-- scripts -->
+    <!-- footer start -->
+    <!-- <footer class="footer bg-gray-800 text-neutral-content p-10">
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+    </footer> -->
+    <!-- footer end -->
     <script src="./js/script.js"></script>
   </body>
 </html>

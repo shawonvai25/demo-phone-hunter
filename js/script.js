@@ -1,13 +1,13 @@
 
-const loadAllPhones= async(status,brandName) =>{
-  console.log(brandName);
+const loadAllPhones= async(status,searchText) =>{
+  console.log(searchText);
   document.getElementById("spinner").style.display = "none";
 
   // fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`)
   // .then(res => res.json())
   // .then(data => console.log(data))
 
-  const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${brandName?brandName:"iphone"}`);
+  const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText?searchText:"iphone"}`);
   
   const data = await response.json();
   console.log(data)
@@ -62,8 +62,7 @@ const handleShowAll = () => {
 
 
 
-const handleSearch = () =>{
-   
+const handleSearch = () =>{   
   document.getElementById("spinner").style.display = "block";
   const searchText = document.getElementById("searchBox").value;
 

@@ -1,7 +1,10 @@
 
+
+
+
 const loadAllPhones= async(status,searchText) =>{
   console.log(searchText);
-  document.getElementById("spinner").style.display = "none";
+  document.getElementById("spinner").style.display='none';
 
   // fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`)
   // .then(res => res.json())
@@ -10,17 +13,34 @@ const loadAllPhones= async(status,searchText) =>{
   const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText?searchText:"iphone"}`);
   
   const data = await response.json();
-  console.log(data)
+
+  if(searchText.length == 0)
+
   if(status){
     displayAllPhone(data.data)
+
   }
   else{
     displayAllPhone(data.data.slice(0,6))
   }
+  
 
 
 }
 
+
+
+const handleSearch = () =>{   
+  document.getElementById("spinner").style.display="block";
+  console.log(document.getElementById("spinner").innerText)
+  const searchText = document.getElementById("searchBox").value;
+  
+   setTimeout(function (){
+     loadAllPhones(false,searchText)
+   },3000)
+
+
+}
 
 
 
@@ -52,27 +72,13 @@ const displayAllPhone = (phones) => {
 
    phoneContainer.append(div);
    });
-}
-
-const handleShowAll = () => {
-  loadAllPhones(true,)
+ 
 }
 
 
 
 
 
-const handleSearch = () =>{   
-  document.getElementById("spinner").style.display = "block";
-  const searchText = document.getElementById("searchBox").value;
-
-
-   setTimeout(function (){
-     loadAllPhones(false,searchText)
-   },3000)
-
-
-}
 
 
 const phoneDetails = async (slugs) => {
@@ -101,7 +107,10 @@ const phoneDetails = async (slugs) => {
  my_modal_1.showModal();
 }
 
-
+const handleShowAll = () => {
+  const searchText = document.getElementById("searchBox").value;
+  loadAllPhones(true,searchText)
+}
 
 
 
